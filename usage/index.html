@@ -139,17 +139,19 @@
 options available for of an <em>Image+</em> TV:</p>
 <p><strong>Target Height/Width</strong></p>
 <p>Images can be constrained to a minimal height and/or width with <strong>Target height</strong> and <strong>Target width</strong>. If both values 
-are set, the target aspect ratio of the output image is calculated with this values.</p>
+are set, the target aspect ratio of the output image is calculated with this values. Both fields have to be filled with 
+an integer value.</p>
 <p><strong>Target Aspect Ratio</strong></p>
 <p>The aspect ratio for the output image could be restricted with <strong>Target Aspect Ratio</strong>. If target height and target 
-width are set, this value is ignored and the calculated aspect ratio of target height and target width is used.</p>
+width are set, this value is ignored and the calculated aspect ratio of target height and target width is used. 
+The field has to be filled with an integer value.</p>
 <p>If you set only one value of <strong>Target Height</strong> or <strong>Target Width</strong> and leave empty <strong>Target Aspect Ratio</strong>, the size of 
 the crop is not restricted to any aspect ratio.</p>
-<p><strong>Alt Tag Field</strong></p>
+<p><strong>Show Alt Tag Field</strong></p>
 <p><em>Image+</em> TVs can also contain an <strong>Alt Tag Field</strong>, which is an additional text input, that is stored with each image. 
 It could be output alongside the image i.e. as an alt-tag or title-tag.</p>
-<p>In order to outpt the alt text in a <em>Image+</em> TV placeholder, you will need to select an chunk in the <strong>Output Options</strong>. 
-You could also use the ImagePlus snippet and specify a template chunk in the snippet call options.</p>
+<p>In order to outpt the alt text in a <em>Image+</em> TV placeholder, you will need to select an chunk in the <strong>Output 
+Options</strong>. You could also use the ImagePlus snippet and specify a template chunk in the snippet call options.</p>
 <p><strong>Allow Empty</strong></p>
 <p>If <strong>Allow Empty</strong> is set to <strong>No</strong>, you will not be able to save a resource until you have selected an image and 
 cropped it.</p>
@@ -157,7 +159,7 @@ cropped it.</p>
 <p>There are several extended output options available for of an <em>Image+</em> TV:</p>
 <p><strong>Additional phpThumb Parameters</strong></p>
 <p>As default an <em>Image+</em> TV returns an relative URL to an cropped (and maybe constrained) image that is scaled by 
-phpThumb. With this output option, you could assign several additional phpThumb parameters that are used to generate 
+phpThumb. With this output option, you could assign several additional phpThumb parameters, that are used to generate 
 the thumbnail image.</p>
 <p><strong>Output Chunk</strong></p>
 <p>If you select an <strong>Output Chunk</strong> the TV output is rendered with that chunk. Select the chunk name from the dropdown. 
@@ -367,7 +369,7 @@ properties could be set in the snippet call:</p>
 
 <!--
 MkDocs version  : 0.12.2
-Docs Build Date : 2015-06-06 22:37:27.363599
+Docs Build Date : 2015-06-19 07:38:53.796956
 -->
 </body>
 </html>
