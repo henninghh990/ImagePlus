@@ -140,7 +140,7 @@
 <h2 id="examples">Examples</h2>
 <p>*<em>Image+</em> could be used for several purposes. On this page you find some examples how to use it:</p>
 <h3 id="migx">MIGX</h3>
-<p>If you want to use <em>Image+</em> in MIGX you could define all <em>Image+</em> TV properties with a JSON string in the 'Configs' textarea in the MIGX formtabs field configuration. The following properties are possible.</p>
+<p>If you want to use <em>Image+</em> in MIGX you could define all <em>Image+</em> TV properties with a JSON string in the 'Configs' textarea in the MIGX formtabs field configuration. The following properties are possible:</p>
 <pre><code>{
 &quot;targetWidth&quot;:&quot;&quot;,
 &quot;targetHeight&quot;:&quot;&quot;,
@@ -150,7 +150,15 @@
 }
 </code></pre>
 
-<p>You could show the thumbnail in the grid column by setting the renderer to 'ImagePlus.MIGX_Renderer'. At the moment you have to raw edit a MIGX configuration for that.</p>
+<p>And you also have to change the <em>Input TV Type</em> to <code>imageplus</code>.</p>
+<p>You could show the thumbnail in the grid column by setting the renderer to 'ImagePlus.MIGX_Renderer'. In prior MIGX versions you have to raw edit a MIGX configuration for that. </p>
+<p>To use that <em>Image+</em>-MIGX-Field in the Frontend, call the <code>ImagePlus</code>-Snippet with just the value-parameter being the name of this MIGX-Field: </p>
+<pre><code>[[ImagePlus? 
+  &amp;value=`[[+migxImagePlusField]]`
+]]
+</code></pre>
+
+<p>This will get you the prepared URL for the cropped image, instead of the raw JSON-Object.</p>
 <!-- Piwik -->
 
 <script type="text/javascript">
