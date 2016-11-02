@@ -131,11 +131,33 @@
     
         <li class="main active"><a href="#input-options">Input Options</a></li>
         
+            <li><a href="#target-heightwidth">Target Height/Width</a></li>
+        
+            <li><a href="#target-aspect-ratio">Target Aspect Ratio</a></li>
+        
+            <li><a href="#show-alt-tag-field">Show Alt Tag Field</a></li>
+        
+            <li><a href="#show-caption-field">Show Caption Field</a></li>
+        
+            <li><a href="#show-credits-field">Show Credits Field</a></li>
+        
+            <li><a href="#allow-empty">Allow Empty</a></li>
+        
+            <li><a href="#contextsystem-settings">Context/System Settings</a></li>
+        
     
         <li class="main "><a href="#output-options">Output Options</a></li>
         
+            <li><a href="#additional-phpthumb-parameters">Additional phpThumb Parameters</a></li>
+        
+            <li><a href="#output-chunk">Output Chunk</a></li>
+        
+            <li><a href="#generate-thumb-url">Generate Thumb URL</a></li>
+        
     
         <li class="main "><a href="#snippet">Snippet</a></li>
+        
+            <li><a href="#example">Example</a></li>
         
     
         <li class="main "><a href="#system-settings">System Settings</a></li>
@@ -147,12 +169,12 @@
 
 <h2 id="input-options">Input Options</h2>
 <p>In <em>Image+</em> you could control the final size and aspect ratio of selected images. There are several extended input 
-options available for of an <em>Image+</em> TV:</p>
-<p><strong>Target Height/Width</strong></p>
+options available for an <em>Image+</em> TV:</p>
+<h4 id="target-heightwidth">Target Height/Width</h4>
 <p>Images can be constrained to a minimal height and/or width with <strong>Target height</strong> and <strong>Target width</strong>. If both values 
 are set, the target aspect ratio of the output image is calculated with this values. Both fields have to be filled with 
 an integer value.</p>
-<p><strong>Target Aspect Ratio</strong></p>
+<h4 id="target-aspect-ratio">Target Aspect Ratio</h4>
 <p>The aspect ratio for the output image could be restricted with <strong>Target Aspect Ratio</strong>. If target height and target 
 width are set, this value is ignored and the calculated aspect ratio of target height and target width is used. 
 The field has to be filled with a float value.</p>
@@ -167,34 +189,46 @@ the crop is not restricted to any aspect ratio.</p>
     </div>
 </div>
 
-<p><strong>Show Alt Tag Field</strong></p>
+<h4 id="show-alt-tag-field">Show Alt Tag Field</h4>
 <p><em>Image+</em> TVs can also contain an <strong>Alt Tag Field</strong>, which is an additional text input, that is stored with each image. 
 It could be output alongside the image i.e. as an alt-tag or title-tag.</p>
 <p>In order to output the alt text in a <em>Image+</em> TV placeholder, you will need to select an chunk in the <strong>Output 
 Options</strong>. You could also use the ImagePlus snippet and specify a template chunk in the snippet call options.
 The alt text is filled in the placeholder <code>[[+alt]]</code> in that chunk.</p>
-<p><strong>Show Caption Field</strong></p>
+<h4 id="show-caption-field">Show Caption Field</h4>
 <p><em>Image+</em> TVs can also contain an <strong>Caption Field</strong>, which is an additional text input, that is stored with each image. 
 It could be output beneath the image i.e. in an additional caption div.</p>
 <p>In order to output the caption in a <em>Image+</em> TV placeholder, you will need to select an chunk in the <strong>Output 
 Options</strong>. You could also use the ImagePlus snippet and specify a template chunk in the snippet call options. 
 The caption is filled in the placeholder <code>[[+caption]]</code> in that chunk.</p>
-<p><strong>Show Credits Field</strong></p>
+<h4 id="show-credits-field">Show Credits Field</h4>
 <p><em>Image+</em> TVs can also contain an <strong>Credits Field</strong>, which is an additional text input, that is stored with each image. 
 It could be output beneath the image i.e. in an additional credits div.</p>
 <p>In order to output the credits in a <em>Image+</em> TV placeholder, you will need to select an chunk in the <strong>Output 
 Options</strong>. You could also use the ImagePlus snippet and specify a template chunk in the snippet call options.
 The credits are filled in the placeholder <code>[[+credits]]</code> in that chunk.</p>
-<p><strong>Allow Empty</strong></p>
+<h4 id="allow-empty">Allow Empty</h4>
 <p>If <strong>Allow Empty</strong> is set to <strong>No</strong>, you will not be able to save a resource until you have selected an image and 
 cropped it.</p>
+<h3 id="contextsystem-settings">Context/System Settings</h3>
+<p>Each <em>Image+</em> TV <strong>Input Option</strong> could be superceded by a context setting or a system setting. And context/system
+settings for a single TV could be defined, too. There are predefined system settings in the <code>imageplus</code> namespace. The
+global context/system settings have the prefix <code>imageplus.</code> and the single TV context/system settings have the prefix
+<code>imageplus.{tvname}.</code>. <code>{tvname}</code> has to be replaced by the name of the template variable.</p>
+<p>The order for those settings is <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup></p>
+<ul>
+<li>TV name based context setting </li>
+<li>TV name based system setting </li>
+<li>context setting</li>
+<li>system setting</li>
+</ul>
 <h2 id="output-options">Output Options</h2>
 <p>There are several extended output options available for of an <em>Image+</em> TV:</p>
-<p><strong>Additional phpThumb Parameters</strong></p>
+<h4 id="additional-phpthumb-parameters">Additional phpThumb Parameters</h4>
 <p>As default an <em>Image+</em> TV returns an relative URL to an cropped (and maybe constrained) image that is scaled by 
 phpThumb. With this output option, you could assign several additional phpThumb parameters, that are used to generate 
 the thumbnail image.</p>
-<p><strong>Output Chunk</strong></p>
+<h4 id="output-chunk">Output Chunk</h4>
 <p>If you select an <strong>Output Chunk</strong> the TV output is rendered with that chunk. Select the chunk name from the dropdown. 
 Several placeholders are possible in that chunk to customize the output:</p>
 <table>
@@ -260,7 +294,7 @@ Several placeholders are possible in that chunk to customize the output:</p>
 </tbody>
 </table>
 <p>All these placeholders could be used in the Snippet too.</p>
-<p><strong>Generate Thumb URL</strong></p>
+<h4 id="generate-thumb-url">Generate Thumb URL</h4>
 <p>If you create the thumbnail in output chunk i.e. by a pthumb output filter, you could disable the generation of the 
 internal thumb URL. </p>
 <h2 id="snippet">Snippet</h2>
@@ -288,17 +322,17 @@ properties could be set in the snippet call:</p>
 </tr>
 <tr>
 <td>type</td>
-<td>Type of the snippet output. Could be set to <code>check</code> <sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup>, <code>tpl</code> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup> and <code>thumb</code> <sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup>.</td>
+<td>Type of the snippet output. Could be set to <code>check</code> <sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup>, <code>tpl</code> <sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup> and <code>thumb</code> <sup id="fnref:4"><a class="footnote-ref" href="#fn:4" rel="footnote">4</a></sup>.</td>
 <td>thumb</td>
 </tr>
 <tr>
 <td>options</td>
-<td>Extended phpThumb options for the image <sup id="fnref:4"><a class="footnote-ref" href="#fn:4" rel="footnote">4</a></sup>.</td>
+<td>Extended phpThumb options for the image <sup id="fnref:5"><a class="footnote-ref" href="#fn:5" rel="footnote">5</a></sup>.</td>
 <td>-</td>
 </tr>
 <tr>
 <td>tpl</td>
-<td>Template chunk for the snippet output <sup id="fnref:5"><a class="footnote-ref" href="#fn:5" rel="footnote">5</a></sup>.</td>
+<td>Template chunk for the snippet output <sup id="fnref:6"><a class="footnote-ref" href="#fn:6" rel="footnote">6</a></sup>.</td>
 <td>ImagePlus.image</td>
 </tr>
 <tr>
@@ -313,7 +347,7 @@ properties could be set in the snippet call:</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Example</strong></p>
+<h4 id="example">Example</h4>
 <pre><code>[[ImagePlus? 
 &amp;tvname=`imageplus` 
 &amp;docid=`1`
@@ -365,19 +399,22 @@ properties could be set in the snippet call:</p>
 <hr />
 <ol>
 <li id="fn:1">
-<p>Outputs <em>image</em> if the Image+ TV contains an image, otherwise <em>noimage</em>.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>The first entry supercedes the second entry in the list etc.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>Outputs the parsed template set by <strong>tpl</strong> property for retreived Image+ TV value (with additional options set by the <strong>options</strong> property) &#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Outputs <em>image</em> if the Image+ TV contains an image, otherwise <em>noimage</em>.&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p>Outputs the thumbnail URL for retreived Image+ TV value (with additional options set by the <strong>options</strong> property)&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>Outputs the parsed template set by <strong>tpl</strong> property for retreived Image+ TV value (with additional options set by the <strong>options</strong> property) &#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
-<p>See <a href="http://phpthumb.sourceforge.net/demo/docs/phpthumb.readme.txt">phpThumb readme</a> for possible options. Maybe not all options are valid in your installation (because of crop engine limitations or server restricions).&#160;<a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>Outputs the thumbnail URL for retreived Image+ TV value (with additional options set by the <strong>options</strong> property)&#160;<a class="footnote-backref" href="#fnref:4" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:5">
-<p>The template chunk placeholder are the same as in the output chunk of the template variable.&#160;<a class="footnote-backref" href="#fnref:5" rev="footnote" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>See <a href="http://phpthumb.sourceforge.net/demo/docs/phpthumb.readme.txt">phpThumb readme</a> for possible options. Maybe not all options are valid in your installation (because of crop engine limitations or server restricions).&#160;<a class="footnote-backref" href="#fnref:5" rev="footnote" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>The template chunk placeholder are the same as in the output chunk of the template variable.&#160;<a class="footnote-backref" href="#fnref:6" rev="footnote" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></div>
