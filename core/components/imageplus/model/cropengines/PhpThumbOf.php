@@ -120,7 +120,6 @@ class PhpThumbOf extends AbstractCropEngine
         };
         $optParams = ($optParams) ? array_merge($cropParams, $optParams) : array_merge($params, $optParams);
         $options = http_build_query($optParams);
-        $options = rawurldecode(preg_replace('/%5B[0-9]+%5D/simU', '%5B%5D', $options));
         $cropOptions = http_build_query($cropParams);
 
         $data->targetWidth = isset($optParams['w']) ? $optParams['w'] : 0;
@@ -128,20 +127,16 @@ class PhpThumbOf extends AbstractCropEngine
 
         // Call phpthumbof for url
         $generateUrl = $this->modx->getOption('generateUrl', $opts, 1);
-        if (file_exists($imgPath)) {
-            if ($generateUrl) {
-                $url = $this->modx->runSnippet(
-                    'phpthumbof',
-                    array(
-                        'options' => $options,
-                        'input' => $imgPath
-                    )
-                );
-            } else {
-                $url = '';
-            }
+        if ($generateUrl) {
+            $url = $this->modx->runSnippet(
+                'phpthumbof',
+                array(
+                    'options' => $options,
+                    'input' => $imgPath
+                )
+            );
         } else {
-            $url = $data->sourceImg->src;
+            $url = '';
         }
 
         // If an output chunk is selected, parse that
@@ -150,6 +145,8 @@ class PhpThumbOf extends AbstractCropEngine
             $chunkParams = array_merge($opts, array(
                 'url' => $url,
                 'alt' => $data->altTag,
+                'title' => $data->titleField,
+                'desc' => $data->descField,
                 'width' => $data->targetWidth,
                 'height' => $data->targetHeight,
                 'source.src' => $imgPath,

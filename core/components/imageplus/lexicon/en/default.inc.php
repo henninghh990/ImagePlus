@@ -4,6 +4,8 @@ $_lang['imageplus'] = 'Image+';
 $_lang['imageplus.editor_title'] = 'Image+ Editor';
 $_lang['imageplus.edit_image'] = 'Edit Image';
 $_lang['imageplus.alt_text'] = 'Alt text';
+$_lang['imageplus.title_text'] = 'Title';
+$_lang['imageplus.desc_text'] = 'Description';
 
 /** Input options render **/
 $_lang['imageplus.targetwidth'] = 'Target (Minimal) Width';
@@ -15,7 +17,11 @@ $_lang['imageplus.targetRatio_desc'] = '(Optional, Float) The target aspect rati
 $_lang['imageplus.thumbnailWidth'] = 'Thumbnail Width';
 $_lang['imageplus.thumbnailWidth_desc'] = '(Optional, Integer) The thumbnail width of the image in the template variable panel.';
 $_lang['imageplus.allowAltTag'] = 'Show Alt Tag Field';
-$_lang['imageplus.allowAltTag_desc'] = 'Allow user to enter a title/alt-tag for the image.';
+$_lang['imageplus.allowAltTag_desc'] = 'Allow user to enter a alt-tag for the image.';
+$_lang['imageplus.allowTitleTag'] = 'Show Title Field';
+$_lang['imageplus.allowTitleTag_desc'] = 'Allow user to enter a title for the image.';
+$_lang['imageplus.allowDescTag'] = 'Show Description Field';
+$_lang['imageplus.allowDescTag_desc'] = 'Allow user to enter a description for the image.';
 
 /** Output options render **/
 $_lang['imageplus.phpThumbParams'] = 'Additional phpThumb Parameters';
@@ -45,5 +51,5 @@ $_lang['imageplus.error.image_too_small.msg'] = 'The selected image is too small
 $_lang['imageplus.error.image_not_found.title'] = 'Image not found';
 $_lang['imageplus.error.image_not_found.msg'] = 'The image was not found and can\'t be cropped. Please select a different image.';
 
-$_lang['setting_imageplus.debug'] = 'Debug';
-$_lang['setting_imageplus.debug_desc'] = 'Log debug informations in MODX error log.';
+$_lang['setting_imageplus.debug'] = 'Enable Debug';
+$_lang['setting_imageplus.debug_desc'] = 'Load not combined/uglified javascript and not combined/minified css files.';

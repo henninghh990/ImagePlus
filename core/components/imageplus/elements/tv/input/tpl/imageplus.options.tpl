@@ -87,10 +87,45 @@
             labelAlign: 'left',
             anchors: '98%',
             listeners: oc
-        }, {
+        },
+        {
             xtype: MODx.expandHelp ? 'label' : 'hidden',
             forId: 'inopt_allowAltTag{/literal}{$tv}{literal}',
             html: _('imageplus.allowAltTag_desc'),
+            cls: 'desc-under'
+        },
+        {
+            xtype: 'combo-boolean',
+            fieldLabel: _('imageplus.allowTitleTag'),
+            name: 'inopt_allowTitleTag',
+            hiddenName: 'inopt_allowTitleTag',
+            id: 'inopt_allowTitleTag{/literal}{$tv}{literal}',
+            value: !(params['allowTitleTag'] == 0 || params['allowTitleTag'] == 'false'),
+            labelAlign: 'left',
+            anchors: '98%',
+            listeners: oc
+        },
+        {
+            xtype: MODx.expandHelp ? 'label' : 'hidden',
+            forId: 'inopt_allowTitleTag{/literal}{$tv}{literal}',
+            html: _('imageplus.allowTitleTag_desc'),
+            cls: 'desc-under'
+        },
+        {
+            xtype: 'combo-boolean',
+            fieldLabel: _('imageplus.allowDescTag'),
+            name: 'inopt_allowDescTag',
+            hiddenName: 'inopt_allowDescTag',
+            id: 'inopt_allowDescTag{/literal}{$tv}{literal}',
+            value: !(params['allowDescTag'] == 0 || params['allowDescTag'] == 'false'),
+            labelAlign: 'left',
+            anchors: '98%',
+            listeners: oc
+        }
+        ,{
+            xtype: MODx.expandHelp ? 'label' : 'hidden',
+            forId: 'inopt_allowDescTag{/literal}{$tv}{literal}',
+            html: _('imageplus.allowDescTag_desc'),
             cls: 'desc-under'
         }],
         renderTo: 'tv-input-properties-form{/literal}{$tv}{literal}'
